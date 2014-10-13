@@ -16,11 +16,11 @@ class Item
   end
 
   def assign_invoice_items(invoice_items)
-    @invoice_items = invoice_items
+    @invoice_items      = invoice_items
   end
 
   def assign_merchant(merchant)
-    @merchant = merchant
+    @merchant           = merchant
   end
 
   def revenue

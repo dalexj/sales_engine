@@ -6,20 +6,20 @@ class Invoice
               :customer, :merchant
 
   def initialize(data)
-    @id          = data[:id]
-    @customer_id = data[:customer_id]
-    @merchant_id = data[:merchant_id]
-    @status      = data[:status]
-    @created_at  = data[:created_at]
-    @updated_at  = data[:updated_at]
+    @id             = data[:id]
+    @customer_id    = data[:customer_id]
+    @merchant_id    = data[:merchant_id]
+    @status         = data[:status]
+    @created_at     = data[:created_at]
+    @updated_at     = data[:updated_at]
   end
 
   def assign_transactions(transactions)
-    @transactions  = transactions
+    @transactions   = transactions
   end
 
   def assign_invoice_items(invoice_items)
-    @invoice_items = invoice_items
+    @invoice_items  = invoice_items
   end
 
   def assign_items(items)
