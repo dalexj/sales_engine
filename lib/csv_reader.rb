@@ -11,14 +11,12 @@ require_relative 'transaction'
 
 class CSVReader
   def read(file_name, dir = "data")
-    type = find_which_object(file_name)
-    entries = []
-    file_name = File.join dir, file_name
-    options =  { headers: true ,header_converters: :symbol, converters: :all }
-    CSV.foreach(file_name, options) do |row|
-      entries << type.new(row.to_hash)
-    end
-    entries
+    type      =   find_which_object(file_name)
+    entries   =   []
+    file_name =   File.join dir, file_name
+    options   =   {headers: true ,header_converters: :symbol, converters: :all }
+    CSV.foreach file_name, options { |row| entries << type.new(row.to_hash) }
+    return entries
   end
 
   def find_which_object(file_name)

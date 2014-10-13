@@ -43,13 +43,13 @@ class InvoiceRepository
   end
 
   def create(data)
-    data[:merchant_id]    =  data[:merchant].id
-    data[:customer_id]    =  data[:customer].id
-    invoice               =  Invoice.new(data)
-    invoice.assign_customer  data[:customer]
-    invoice.assign_items     data[:items]
-    invoice.assign_merchant  data[:merchant]
-    entries[entries.size] = invoice
+    data[:merchant_id]    =   data[:merchant].id
+    data[:customer_id]    =   data[:customer].id
+    invoice               =   Invoice.new(data)
+    invoice.assign_customer   data[:customer]
+    invoice.assign_items      data[:items]
+    invoice.assign_merchant   data[:merchant]
+    entries[entries.size] =   invoice
   end
 
   private
