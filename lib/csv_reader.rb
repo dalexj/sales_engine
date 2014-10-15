@@ -15,7 +15,7 @@ class CSVReader
     entries   =   []
     file_name =   File.join dir, file_name
     options   =   {headers: true ,header_converters: :symbol, converters: :all }
-    CSV.foreach file_name, options { |row| entries << type.new(row.to_hash) }
+    CSV.foreach(file_name, options) { |row| entries << type.new(row.to_hash) }
     return entries
   end
 
